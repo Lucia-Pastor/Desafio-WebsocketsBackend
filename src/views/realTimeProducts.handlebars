@@ -1,0 +1,24 @@
+<div>
+    <h1>¡Bienvenido! Estos son los productos que tenemos disponibles, ¡pero ahora en tiempo real!</h1>
+    {{#if showProducts}}
+        <div id="products-container">
+            {{#each products}}
+                <div>
+                    <p>Nombre: {{this.title}}</p>
+                    <p>Descripción: {{this.description}}</p>
+                    <p>Categoría: {{this.category}}</p>
+                    <p>Precio: {{this.price}}</p>
+                    <p>Stock: {{this.stock}}</p>
+                    <p>ID: {{this.id}}</p>
+                    <p>Código de producto: {{this.code}}</p>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <p>¡Lo sentimos! Temporalmente no podemos mostrate nuestros productos. Regresa más tarde.</p>
+    {{/if}}
+
+</div> 
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
